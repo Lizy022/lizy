@@ -1,0 +1,156 @@
+<!DOCTYPE html> 
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Invitación M & A</title>
+    <!--Icono en la pestaña-->
+    <link rel="shortcut icon" href="images/img logo anillo.png" type="image/x-icon">
+    <!--Libreria de animaciones AOS-->
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css">
+    <!--Libreria de iconos-->
+    <link rel="stylesheet" href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css">
+    <!--Conectar CSS-->
+    <link rel="stylesheet" href="css/app.css">
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body onclick="PlayAudio()">
+
+
+
+  
+<!-- sobre -->
+<div id="overlay-sobre">
+    <div class="sobre-contenedor" onclick="abrirSobre()">
+        <img src="images/nuevo sobre.png" class="sobre" alt="Sobre">
+        <div class="texto-abrir">Abrir</div>
+    </div>
+</div>
+
+
+</div>
+
+ <!--fondo a mano-->
+<header class="hero">
+   <img src="images/FONDO8.jpg" alt="Header" class="hero-img">
+</header>
+
+
+        <!--Menu Hamburguesa-->
+        <div class="hamburger">
+            <span></span>
+            <span></span>
+        </div>
+    </div>
+</div> 
+
+<!-- Sección Nuestra Boda -->
+<section id="nuestra-boda">
+  <div class="container">
+    <div class="section-intro" data-aos="fade-up">
+      <h2 class="wedding-title">Nuestra Boda</h2>
+    </div>
+
+    <div class="wedding-content" data-aos="fade-up" data-aos-delay="300">
+      <div class="wedding-image left">
+        <img src="images/foto1.jpg">
+      </div>
+
+      <div class="wedding-text">
+        <p>
+          “En el silencio del tiempo nos encontramos,
+y en la eternidad de una mirada nos elegimos.
+Hoy unimos caminos, sueños y destinos,
+para caminar juntos hacia el siempre.”
+        </p>
+      </div>
+
+      <div class="wedding-image right">
+        <img src="images/foto2.jpg">
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section id="contador" class="contador-marco">
+
+  <div id="timer">
+    <div><span id="days"></span><br>Días</div>
+    <div><span id="hours"></span><br>Horas</div>
+    <div><span id="minutes"></span><br>Minutos</div>
+    <div><span id="seconds"></span><br>Segundos</div>
+  </div>
+</section>
+
+<section class="parents-invitation">
+  <div class="invitation-content">
+    <h2 class="parents-title">Junto al amor y apoyo de nuestros padres</h2>
+    <h3 class="phrase">Sé testigo de nuestra inolvidable unión</h3>
+
+    <div class="parents">
+      <div class="parents-left">
+        <h3>Padres de la novia</h3>
+        <p>Miguel Ángel Ruiz González</p>
+        <p>&</p>
+        <p>Elizabeth Valtierra Ramírez</p>
+      </div>
+      <div class="parents-right">
+        <h3>Padres del novio</h3>
+        <p>Nahún Sijero Palma</p>
+        <p>&</p>
+        <p>Lidia García Oliveros</p>
+      </div>
+    </div>
+
+    <!-- 🌸 Flores decorativas -->
+    <img src="images/peonia.png" alt="Flores decorativas" class="decoracion-flor inferior">
+    <img src="images/peonia.png" alt="Flores decorativas" class="decoracion-flor superior">
+  </div>
+
+
+
+  <!-- musica-->
+
+<audio id="musica" loop>
+  <source src="Alejandro Fernández - Me Hace Tanto Bien (Video Oficial).mp3" type="audio/mpeg">
+</audio>
+
+</section>
+
+
+<!--JS -->
+<script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+<script src="https://unpkg.com/aos@next/dist/aos.js"></script> 
+<script src="js/app.js"></script>
+<script src="js/script.js"></script>
+<script>
+  function PlayAudio (){
+    document.getElementById("musica").play();
+  }
+</script>
+<script>
+function abrirSobre() {
+  const sobre = document.querySelector(".sobre");
+  const overlay = document.getElementById("overlay-sobre");
+  const contenido = document.getElementById("contenido");
+
+  // Animación del sobre
+  sobre.classList.add("abriendo");
+
+  // Espera la animación y luego desaparece el overlay
+  setTimeout(() => {
+    overlay.style.opacity = "0";
+    overlay.style.pointerEvents = "none";
+
+    // Mostrar contenido real
+    contenido.style.display = "block";
+
+    // Ocultar overlay después del fade out
+    setTimeout(() => overlay.remove(), 600);
+  }, 800);
+}
+</script>
+
+</body>
+</html>
